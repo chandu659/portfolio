@@ -33,6 +33,15 @@ export const EXPERIENCE = [
       "Work closely with cross-functional teams on implementing accessibility best practices",
       "Develop and maintain accessible UI components using React and TypeScript",
     ],
+    skills: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Storybook",
+      "Accessibility",
+      "HTML/CSS",
+      "Git"
+    ]
   },
   // Add more experience entries from your resume
 ];
