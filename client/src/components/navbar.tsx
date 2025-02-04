@@ -4,11 +4,12 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { fadeIn } from "@/lib/animations";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -49,20 +50,23 @@ export default function Navbar() {
               {item.name}
             </a>
           ))}
+          <ThemeToggle />
           <Button variant="outline" size="sm">
             Resume
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </Button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </Button>
+        </div>
 
         {/* Mobile Menu */}
         {isOpen && (

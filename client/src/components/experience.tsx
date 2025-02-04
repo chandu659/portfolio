@@ -21,7 +21,7 @@ export default function Experience() {
         Where I've Worked
       </motion.h2>
 
-      <div className="space-y-8">
+      <div className="max-w-[70%] mx-auto space-y-8">
         {EXPERIENCE.map((job) => (
           <motion.div key={job.company} variants={fadeIn}>
             <Card className="relative overflow-hidden group hover:bg-card/50 transition-colors duration-300">

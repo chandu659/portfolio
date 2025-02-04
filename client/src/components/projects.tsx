@@ -22,7 +22,7 @@ export default function Projects() {
         Some Things I've Built
       </motion.h2>
 
-      <div className="space-y-8">
+      <div className="max-w-[70%] mx-auto space-y-8">
         {PROJECTS.map((project) => (
           <motion.div
             key={project.title}
