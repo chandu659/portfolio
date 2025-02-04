@@ -22,40 +22,24 @@ export default function Projects() {
         Some Things I've Built
       </motion.h2>
 
-      <div className="space-y-24">
-        {PROJECTS.map((project, index) => (
+      <div className="space-y-8">
+        {PROJECTS.map((project) => (
           <motion.div
             key={project.title}
             variants={fadeIn}
             className="relative"
           >
-            <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
-              <div className="md:w-7/12 relative group">
-                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
-                <div className="w-full h-[300px] bg-card/30 rounded-lg overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-card/50">
-                      <span className="text-muted-foreground">Project Preview</span>
-                    </div>
-                  )}
+            <Card className="relative overflow-hidden group hover:bg-card/50 transition-colors duration-300">
+              <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
+              <div className="p-6 space-y-4">
+                <div>
+                  <p className="text-primary font-mono text-sm mb-2">Featured Project</p>
+                  <h3 className="text-2xl font-bold font-mono">{project.title}</h3>
                 </div>
-              </div>
 
-              <div className="md:w-5/12 space-y-4">
-                <p className="text-primary font-mono text-sm">Featured Project</p>
-                <h3 className="text-2xl font-bold font-mono">{project.title}</h3>
-
-                <Card className="p-6 bg-card/30 backdrop-blur-sm">
-                  <p className="text-muted-foreground">
-                    {project.description}
-                  </p>
-                </Card>
+                <div className="text-muted-foreground">
+                  {project.description}
+                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
@@ -94,7 +78,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
-            </div>
+            </Card>
           </motion.div>
         ))}
       </div>
