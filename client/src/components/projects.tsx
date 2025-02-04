@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
@@ -17,47 +17,76 @@ export default function Projects() {
     >
       <motion.h2
         variants={fadeIn}
-        className="text-3xl font-bold mb-8 font-mono"
+        className="text-3xl font-bold mb-8 font-mono text-primary"
       >
-        Featured Projects
+        Some Things I've Built
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-24">
         {PROJECTS.map((project, index) => (
-          <motion.div key={project.title} variants={fadeIn}>
-            <Card className="h-full hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="text-xl font-mono">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
+          <motion.div
+            key={project.title}
+            variants={fadeIn}
+            className="relative"
+          >
+            <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
+              <div className="md:w-7/12 relative group">
+                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+
+              <div className="md:w-5/12 space-y-4">
+                <p className="text-primary font-mono text-sm">Featured Project</p>
+                <h3 className="text-2xl font-bold font-mono">{project.title}</h3>
+
+                <Card className="p-6 bg-card/30 backdrop-blur-sm">
+                  <p className="text-muted-foreground">
+                    {project.description}
+                  </p>
+                </Card>
+
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary">
+                    <Badge
+                      key={tech}
+                      variant="outline"
+                      className="bg-background/50 text-primary font-mono text-xs"
+                    >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+
+                <div className="flex gap-4 text-muted-foreground">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                      aria-label={`View ${project.title} source code on GitHub`}
+                    >
+                      <Github size={20} />
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                      aria-label={`Visit ${project.title} live site`}
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                  )}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
