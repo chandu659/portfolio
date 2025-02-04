@@ -3,7 +3,7 @@ export const PROJECTS = [
     title: "Senior Frontend Engineer, Accessibility",
     description: "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
     tech: ["JavaScript", "TypeScript", "React", "Storybook"],
-    image: "/projects/klaviyo.png",
+    image: "/images/placeholder-project.jpg", 
     period: "2024 — PRESENT",
     github: null,
     live: "https://www.klaviyo.com",

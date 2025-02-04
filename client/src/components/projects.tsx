@@ -32,11 +32,19 @@ export default function Projects() {
             <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}>
               <div className="md:w-7/12 relative group">
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover rounded-lg"
-                />
+                <div className="w-full h-[300px] bg-card/30 rounded-lg overflow-hidden">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-card/50">
+                      <span className="text-muted-foreground">Project Preview</span>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="md:w-5/12 space-y-4">
