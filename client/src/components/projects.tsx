@@ -28,7 +28,7 @@ export default function Projects() {
             key={project.title}
             variants={fadeIn}
           >
-            <Card className="h-full bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
+            <Card className="h-full bg-background/50 border-2 border-border/50 backdrop-blur-sm hover:bg-card/5 hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
               <CardContent className="p-6 space-y-4">
                 <div className="h-12 w-12 flex items-center justify-center rounded-full bg-primary/10">
                   <project.Icon className="w-6 h-6 text-primary" />
