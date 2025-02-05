@@ -1,13 +1,40 @@
-export const PROJECTS = [
+import { SiReact, SiPython, SiNotion } from "react-icons/si";
+import { type IconType } from "react-icons";
+
+interface Project {
+  title: string;
+  description: string;
+  tech: string[];
+  Icon: IconType;
+  github: string | null;
+  live: string | null;
+}
+
+export const PROJECTS: Project[] = [
   {
-    title: "Senior Frontend Engineer, Accessibility",
-    description: "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
-    tech: ["JavaScript", "TypeScript", "React", "Storybook"],
-    period: "2024 — PRESENT",
-    github: null,
-    live: "https://www.klaviyo.com",
+    title: "Next.js Portfolio Website",
+    description: "A single-page application portfolio website built using Next.js, TailwindCSS, and shadcn/ui components.",
+    tech: ["Next.js", "React", "TypeScript", "TailwindCSS", "shadcn/ui"],
+    Icon: SiReact,
+    github: "https://github.com/yourusername/portfolio",
+    live: "https://your-portfolio.com",
   },
-  // Add more projects based on your resume
+  {
+    title: "LinkedIn Job Search Automation",
+    description: "A comprehensive project that automates LinkedIn job searches, scrapes job details, analyzes job descriptions using GPT, and generates tailored resumes and cover letters.",
+    tech: ["Python", "Selenium", "BeautifulSoup", "pandas", "GPT", "DocX"],
+    Icon: SiPython,
+    github: "https://github.com/yourusername/linkedin-automation",
+    live: null,
+  },
+  {
+    title: "TickTick-Notion Two-Way Sync",
+    description: "A Python-based application that enables two-way synchronization between TickTick tasks and Notion databases, allowing seamless task management across both platforms.",
+    tech: ["Python", "TickTick API", "Notion API", "aiohttp", "asyncio"],
+    Icon: SiNotion,
+    github: "https://github.com/yourusername/ticktick-notion-sync",
+    live: null,
+  },
 ];
 
 export const SKILLS = [
@@ -42,5 +69,4 @@ export const EXPERIENCE = [
       "Git"
     ]
   },
-  // Add more experience entries from your resume
 ];

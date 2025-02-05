@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
@@ -22,38 +22,38 @@ export default function Projects() {
         Some Things I've Built
       </motion.h2>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {PROJECTS.map((project) => (
           <motion.div
             key={project.title}
             variants={fadeIn}
-            className="relative"
           >
-            <Card className="relative overflow-hidden group hover:bg-card/50 transition-colors duration-300">
-              <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-              <div className="p-6 space-y-4">
+            <Card className="h-full bg-card/30 backdrop-blur-sm hover:bg-card/50 transition-all duration-300">
+              <CardContent className="p-6 space-y-4">
+                <div className="h-12 w-12 flex items-center justify-center rounded-full bg-primary/10">
+                  <project.Icon className="w-6 h-6 text-primary" />
+                </div>
+
                 <div>
-                  <p className="text-primary font-mono text-sm mb-2">Featured Project</p>
-                  <h3 className="text-2xl font-bold font-mono">{project.title}</h3>
+                  <h3 className="text-xl font-bold font-mono mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm">
+                    {project.description}
+                  </p>
                 </div>
 
-                <div className="text-muted-foreground">
-                  {project.description}
-                </div>
-
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-4">
                   {project.tech.map((tech) => (
                     <Badge
                       key={tech}
                       variant="outline"
-                      className="bg-background/50 text-primary font-mono text-xs"
+                      className="bg-primary/5 text-primary border-primary/20 font-mono text-xs"
                     >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <div className="flex gap-4 text-muted-foreground">
+                <div className="flex gap-4 text-muted-foreground pt-2">
                   {project.github && (
                     <a
                       href={project.github}
@@ -77,7 +77,7 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
-              </div>
+              </CardContent>
             </Card>
           </motion.div>
         ))}
