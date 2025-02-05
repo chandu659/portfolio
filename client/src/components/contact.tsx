@@ -58,7 +58,7 @@ export default function Contact() {
           asChild
           className="font-mono"
         >
-          <a href="mailto:your.email@example.com">Say Hello</a>
+          <a href="mailto:chandur659@gmail.com">Say Hello</a>
         </Button>
       </motion.div>
     </motion.section>
