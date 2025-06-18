@@ -27,7 +27,7 @@ export default function Contact() {
           <CardContent className="p-6 flex flex-col items-center space-y-4">
             <div className="flex space-x-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/chandu659"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -35,7 +35,7 @@ export default function Contact() {
                 <Github size={24} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/ranga-c/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -43,7 +43,7 @@ export default function Contact() {
                 <Linkedin size={24} />
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:chandur659@gmail.com"
                 className="hover:text-primary transition-colors"
               >
                 <Mail size={24} />

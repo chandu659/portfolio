@@ -24,11 +24,9 @@ export default function Hero() {
         >
           <TypeAnimation
             sequence={[
-              "Your Name.",
+              "Ranga ChandraMohan Reddy Chilkala.",
               1000,
-              "Software Engineer.",
-              1000,
-              "Web Developer.",
+              "Software Developer.",
               1000,
             ]}
             wrapper="span"

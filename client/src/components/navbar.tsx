@@ -36,7 +36,7 @@ export default function Navbar() {
     >
       <nav className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/">
-          <a className="text-xl font-bold font-mono">YN.</a>
+          <a className="text-xl font-bold font-mono">Ranga.</a>
         </Link>
 
         {/* Desktop Menu */}
